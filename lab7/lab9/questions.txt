@@ -1,0 +1,6 @@
+1. There are two segments: cat < x and cat > y. For the first segment, standard input is 0 (CONSOLE) and standard output is 31 (pipe device). For the second segment, standard input is 31 (pipe device) and standard output is 0 (CONSOLE) 
+2. Shell will sleep for 5 seconds
+3. Shell will cat file x and then sleep for 5 seconds
+4. The date will be in file y
+5. Hi there will be printed and the program will sleep for 30 seconds and during this time, the date will be printed 
+

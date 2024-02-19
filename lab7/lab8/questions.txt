@@ -1,0 +1,6 @@
+1. The XInu process will ignore it
+2. RF_SERVER_PORT and RF_SERVER would need to be changed in rfilesys.h
+3. Yes, because the created file is accessible for either xinu01 or xinu02 since it was sent to the remote file system. 
+4. This would not be allowed becausde the max length is 1024 bytes so writing 1200 bytes would not be possible.
+5. rfilesys.h can be shared between client and server software so the message formats and constants are only defined once.
+

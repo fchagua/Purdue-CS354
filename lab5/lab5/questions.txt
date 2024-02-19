@@ -1,0 +1,7 @@
+1. The program uses the prstkbase and prstklen of the current process. 
+2. The largest stack for which output will be correct would be 4294967296 or 2^32. This is due to the fact that a number larger than the 32-bit integer would not be accurate to use. 
+3. The array to hold the processes was prcount. However, this is due to the fact that prcount matched the number of live processes.
+4. The size of memlist should not be included. This is because memlist is the head of the free list and tracks how the free list is currently, so it will not be partitioned when getmem or getstk are called. The total free memory I computed agrees with the total in memblock since I started with memlist.mnext instead of with the memlist. 
+5. Using an array where each index stores a block, the maximum size of the array would be B + K. This would allow for all blocks to be placed in the array and then the free list can be computed. In the end, all the indices will not be used as coalescing will occur.
+6. 
+

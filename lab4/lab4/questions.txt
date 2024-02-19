@@ -1,0 +1,10 @@
+1. Yes, four messages were received.
+2. I expected four messages to be received.
+3. The program ended with a count of 8 messages. There appeared to be an additional 4 messages passed to the system since I had a counter specifically for messages from the given processes and a counter for other messages.
+4. Knowing that the previous step resulted in 8 messages, I expected there to still be 8 messages.
+5. I had values below 8, such as 6.
+6. It is possible for the program to announce all four proceses have exited when one has not. If the delay for one of the processes is long enough, then the main function will be able to finish before that one process.
+7. It is possible for the program to announce all four processes have exited when all of them have not. If the delay is large enough for each process, then the main program will be able to announce this since it has the hgihest priority of the group of processes.
+8. If the priority of the four processes is 50 instead of 10, then the issue of announcing a process has exited when it has not will dramatically decrease. This is due to the fact that priority of 50 is more than the priority of 20 that the main program would have.
+9. Before the program runs, I expect that there will be four messages printed, two from each process. After running the system, the main function exited first and the two processes printed only one message each but have values of 0 and 1. They appear to not have broken from their loops.
+10. Before the program runs, I expect that there will be four messages printed, two from each process. After running the system, the main function exits first and the two processes print that they got their last value of mnum and appear to have exited their loops.

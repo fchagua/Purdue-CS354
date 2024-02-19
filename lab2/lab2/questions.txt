@@ -1,0 +1,25 @@
+1. Output starts after print is typed. The output stops when something else is typed. If quit is typed then the process exits.
+2. Output does not continue after quit since the loop is exited.
+3. Each process will make its own copy of counter that it will keep track of and not interfere with other processors.
+4. The chief advantage is that the program can choose when to have the process running versus having the process continuously checking the boolean value.
+5. If they were assigned priority 9 then the pr processes would go first.
+6. Print will resume the processes, stop printing will suspend the processes, and print will resume them. When the processes resume, they print letters. When the processes are suspended then no letters are being printed.
+7. A SYSERR will occur when the input becomes larger than the size of the buffer. There is also a circumstance where resume or suspend try to operate on a process in the wrong state. This would return a SYSERR.
+8. You could try to increase the buffer size. In the second case, you could check the process state and continue the loop if the resume or suspend are invalid.
+9. Since the program is switching between the two processes, there will be moments where one process is in the current state and the other is in the ready state. If the program calls for the processes to be suspended, then they could be a moment where the current state process is suspended first. This would create a scenario where one process is suspended and one is in the ready state. However, this would occur only for a short amount of time as the ready-state process will be suspended.
+10. 
+while (true)
+	char buffer[]
+	int processesList[]
+	int counter
+	read user input into buffer
+	if (buffer == "print") 
+		resume processes in processesList
+	if (buffer == "stop printing")
+		suspend processes in processesList
+	if (buffer contains "new process")
+		char x = extract char of last index
+		resume(processesList[counter] = create(prsusp,....., x)
+		counter++
+		
+

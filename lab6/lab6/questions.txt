@@ -1,0 +1,12 @@
+1. Step 3 worked when transferring zero bytes and CS354.
+2. Step 4 worked when transferring BB_SIZE bytes where BB_SIZE is 20.
+3. Step 5 worked when transferring 3*BB_SIZE+25 bytes where BB_SIZE is 300.
+4. Step 6 worked when transfering all the bytes with an initial delay in the producer process
+5. Step 6 worked when transfering all the bytes with an initial delay in the consumer process
+6. Step reported only A's and B's. It also had the correct count with 600 A's and 300 B's.
+7. I had both producers complete their processes. However, when one producer finished its insertions, it would send a message to the other producer which was waiting for a message once it finished its insertions. If the message received was correct (in this case, the number of A's sent from producer 1) then the producer 2 would call bb_endinsert. 
+8. The total number of characters is correct since it added to 30,000 which is 100 * 300. In addition, each character was around the average count. For example, since consumer1 only had around 12,000 characters, the average was around 47. This matched closely with its summary. Similarly, since consumer2 had around 18,000 characers, the average was around 70. This matched closely with its summary.
+9. To ensure that endextract would be called once, I had one consumer send a message to the second consumer that was waiting for a message. Once the message was received, then bb_endextract was called.
+10. Yes, the byte values received by the consumers matched those sent by the two producers. The producers sent 30,000 A's and 600 B's. When the consumers total their characters, they received 30,000 A's and 600 B's. In addition, the total count from the consumers was 36,000 which is the same as the number of characters that the producers sent. The A's and B's were spread between the consumers as opposed to a producer inserting a specific character. The consumers also had different counts from eachh other.
+11. 
+

@@ -1,0 +1,12 @@
+1. There should have been 30000 attempts to change global variable total
+2. The program will split between the processes and t1's final value will be set in a cycle before the other two processes
+3. incr1 finished first. The value of t1 was 10000, that of t2 was 20000, and that of t3 was 30000
+4. The value of total was 30000. I did not expect this since I thought there would be issues with the processes running at the same time.
+5. total ended up being 600000. I expected that the total would be 1200000 when NITER equals 300000
+6. t1 was 120000, t2 was 240000, t3 was 240000, and total was 240000 when NITER equals 120000.
+7. t1 was 150000, t2 was 150000, t3 was 300000, and total was 150000 when NITER equals 150000.
+8. t1 was 185000, t2 was 185000, t3 was 370000, and total was 185000 when NITER equals 185000.
+9. In step 5, when NITER was 120000, the sequence could have t1 properly incrementing but t2 and t3 are occurring at the same time. This means that the final value of t3 are not accurate and the total will then become inaccurate.
+10. Adding mutal exlcusions resulted in the correct value for total in all cases.
+11. There is a situation where nprocesses does not reach zero, causing an infinite loop. The program needs to make sure that nprocesses is being properly decremented after each increment function.
+
